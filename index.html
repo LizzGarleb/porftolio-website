@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lizz Garleb</title>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Logo" width="80">
+        </div>
+        <nav>
+            <ul>
+                <li>
+                    <a href="#">HOME</a>
+                </li>
+                <li>
+                    <a href="#">ABOUT</a>
+                </li>
+                <li>
+                    <a href="#">JOURNEY</a>
+                </li>
+                <li>
+                    <a href="#">PROJECTS</a>
+                </li>
+                <li>
+                    <a href="#">BLOGS</a>
+                </li>
+                <li>
+                    <a href="#">CONTACT</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Side bar -->
+    <div class="sidebar active" id="sidebar">
+        <a href="#">
+            <ion-icon name="home"></ion-icon>
+        </a>
+        <a href="#about">
+            <ion-icon name="person"></ion-icon>
+        </a>
+        <a href="#journey">
+            <ion-icon name="footsteps"></ion-icon>
+        </a>
+        <a href="#projects">
+            <ion-icon name="golf"></ion-icon>
+        </a>
+        <a href="#blogs">
+            <ion-icon name="pencil"></ion-icon>
+        </a>
+        <a href="#contact">
+            <ion-icon name="call"></ion-icon>
+        </a>
+    </div>
+
+    <!-- Matrix Section -->
+    <section>
+        <canvas></canvas>
+        <div class="textOverlap">
+            <div class="home">
+                <h1>
+                    <strong>Welcome to my portfolio</strong>
+                </h1>
+                <p>Software Engineer</p>
+                <h2>Hi, I'm <span class="special-color">Lizbeth</span> García Lebrón<br>
+                from Puerto Rico</h2>
+            </div>
+
+            <div class="arrow-container">
+                <p class="special-color">SCROLL DOWN</p>
+                <div class="arrow"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section class="about-section" id="about">
+        <!-- Avatar of me -->
+        <div class="avatar-img">
+            <img src="avatar.png" alt="Lizbeth Garcia">
+        </div>
+        <div class="content">
+            <div class="title-container">
+                <ion-icon class="title-icon" name="person"></ion-icon>
+                <h1 class="special-color title">ABOUT ME</h1>
+            </div>
+            <p>Hey there! I'm Lizbeth García Lebrón, a software engineer driven by a passion 
+            for all things code-related. I'm currently immersed in a machine learning 
+            specialization at Holberton School. If you want to connect with me and follow my 
+            coding adventures, my social media handles are listed down below I hope you have a great 
+            time exploring my portfolio!</p>
+            <div class="social-media">
+                <div class="social-group">
+                    <a href="https://www.instagram.com/codewithlizz" target="_blank">
+                        <ion-icon class="social-handler" name="logo-instagram"></ion-icon>
+                        <span>@codewithlizz</span>
+                    </a>
+                </div>
+            
+                <div class="social-group">
+                    <a href="https://github.com/LizzGarleb" target="_blank">
+                        <ion-icon class="social-handler" name="logo-github"></ion-icon>
+                        <span>@LizzGarleb</span>
+                    </a>
+                </div>
+            
+                <div class="social-group">
+                    <a href="https://www.linkedin.com/in/lizbethgarcialebron" target="_blank">
+                        <ion-icon class="social-handler" name="logo-linkedin"></ion-icon>
+                        <span>Lizbeth Garcia</span>
+                    </a>
+                </div>
+            
+                <div class="social-group">
+                    <a href="https://twitter.com/LizzGarleb" target="_blank">
+                        <ion-icon class="social-handler" name="logo-twitter"></ion-icon>
+                        <span>@LizzGarleb</span>
+                    </a>
+                </div>
+            </div>
+            <div class="tech-stack">
+                <h2>Tech Stack</h2>
+                <br>
+                <!-- Present brief row of tech stack -->
+                <h4 id="toggle-languages">Languages</h4>
+                <h4 id="toggle-frameworks">Frameworks</h4>
+                <h4 id="toggle-databases">Databases & Hosting</h4>
+
+                <!-- Languages -->
+                <div class="icons languages-icons hidden">
+                    <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" />
+                    <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" />
+                    <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" />
+                    <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" />
+                    <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" />
+                </div>
+
+                <!-- Frameworks -->
+                <div class="icons frameworks-icons hidden">
+                    <i class="devicon-nextjs-original"></i>
+                    <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ionic/ionic-original-wordmark.svg" />
+                    <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original-wordmark.svg" />
+                    <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" />
+                    <i class="devicon-express-original colored"></i>
+                    <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" />
+                    <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" />
+                </div>
+
+                <!-- Databases & Hosting -->
+                <div class="icons database-icons hidden">
+                    <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg" />
+                    <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" />
+                    <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original-wordmark.svg" />
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="journey-section" id="journey">
+        <div class="ag-timeline_title-box">
+            <ion-icon class="footstep-icon" name="footsteps"></ion-icon>
+            <h1 class="special-color">JOURNEY</h1>
+        </div>
+            <div class="ag-format-container">
+                <div class="js-timeline ag-timeline">
+                    <div class="js-timeline_line ag-timeline_line">
+                        <div class="js-timeline_line-progress ag-timeline_line-progress"></div>
+                    </div>
+                    <div class="ag-timeline_list">
+                        <div class="js-timeline_item ag-timeline_item">
+                            <div class="ag-timeline-card_box">
+                                <div class="js-timeline-card_point-box ag-timeline-card_point-box">
+                                    <div class="ag-timeline-card_point">JUNE</div>
+                                </div>
+                                <div class="ag-timeline-card_meta-box">
+                                    <div class="ag-timeline-card_meta">2023</div>
+                                </div>
+                            </div>
+                            <div class="ag-timeline-card_item">
+                                <div class="ag-timeline-card_inner">
+                                    <div class="ag-timeline-card_img-box">
+                                        <img src="https://blog.holbertonschool.com/wp-content/uploads/2019/04/instagram_feed180.jpg"
+                                            class="ag-timeline-card_img" width="620" height="330" />
+                                    </div>
+                                    <div class="ag-timeline-card_info">
+                                        <div class="ag-timeline-card_title">Holberton School</div>
+                                        <div class="ag-timeline-card_desc">
+                                            The Holberton School Machine Learning Specialization is an 
+                                            intensive program that provides students with a focused
+                                            education in machine learning. Through hands-on projects and 
+                                            coursework, students gain expertise in machine learning
+                                            algorithms, deep learning, and data science techniques. Graduates 
+                                            are well-prepared for careers in data analysis,
+                                            artificial intelligence development, and machine learning engineering.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ag-timeline-card_arrow"></div>
+                            </div>
+                        </div>
+                        <div class="js-timeline_item ag-timeline_item">
+                            <div class="ag-timeline-card_box">
+                                <div class="ag-timeline-card_meta-box">
+                                    <div class="ag-timeline-card_meta">2023</div>
+                                </div>
+                                <div class="js-timeline-card_point-box ag-timeline-card_point-box">
+                                    <div class="ag-timeline-card_point">MAY</div>
+                                </div>
+                            </div>
+                            <div class="ag-timeline-card_item">
+                                <div class="ag-timeline-card_inner">
+                                    <div class="ag-timeline-card_img-box">
+                                        <img src="https://media.licdn.com/dms/image/C560BAQFubMFZUMGB6w/company-logo_200_200/0/1632150984524?e=1700697600&v=beta&t=-0g-hwsN638BurX1WBGXf9ajxapHkOXKqNsxIEQaMKQ"
+                                            class="ag-timeline-card_img" width="620" height="330" alt="" />
+                                    </div>
+                                    <div class="ag-timeline-card_info">
+                                        <div class="ag-timeline-card_title">ABACROP</div>
+                                        <div class="ag-timeline-card_desc">
+                                            Abacrop is a digital agricultural data capture platform that helps 
+                                            farmers improve their productivity and efficiency. It
+                                            is designed to be easy to use and affordable, making it accessible 
+                                            to small and medium-sized farmers. Abacrop provides
+                                            farmers with access to weather data, market prices, and other 
+                                            agricultural information.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ag-timeline-card_arrow"></div>
+                            </div>
+                        </div>
+                        <div class="js-timeline_item ag-timeline_item">
+                            <div class="ag-timeline-card_box">
+                                <div class="js-timeline-card_point-box ag-timeline-card_point-box">
+                                    <div class="ag-timeline-card_point">SEP</div>
+                                </div>
+                                <div class="ag-timeline-card_meta-box">
+                                    <div class="ag-timeline-card_meta">2022</div>
+                                </div>
+                            </div>
+                            <div class="ag-timeline-card_item">
+                                <div class="ag-timeline-card_inner">
+                                    <div class="ag-timeline-card_img-box">
+                                        <img src="https://blog.holbertonschool.com/wp-content/uploads/2019/04/instagram_feed180.jpg"
+                                            class="ag-timeline-card_img" width="620" height="330" alt="" />
+                                    </div>
+                                    <div class="ag-timeline-card_info">
+                                        <div class="ag-timeline-card_title">Holberton School</div>
+                                        <div class="ag-timeline-card_desc">
+                                            The Holberton School Foundation Course is an immersive
+                                            program designed to provide students with a strong foundation in
+                                            software engineering. It covers a wide range of topics,
+                                            including full-stack development, algorithms, and system
+                                            engineering, through hands-on, project-based learning.
+                                            This self-paced program allows students to build a portfolio of
+                                            impressive projects and prepares them for more advanced
+                                            coursework and careers in the tech industry.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ag-timeline-card_arrow"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <section class="project-section" id="projects">
+        <div class="title-container project-title">
+            <ion-icon class="title-icon" name="golf"></ion-icon>
+            <h1 class="special-color title">PROJECTS</h1>
+        </div>
+        <div class="carousel-container">
+            <div class="carousel">
+                <!-- Carousel goes here -->
+                <div class="card">
+                    <!-- Link for Aventuras PR Blog -->
+                    <a href="#">
+                        <img src="https://media.licdn.com/dms/image/D4E2DAQHTfUhhVMeATA/profile-treasury-image-shrink_800_800/0/1691267112759?e=1693213200&v=beta&t=UU38LLc63X4B6edcEwT854NQypJXi_48W-9Usl5MNBM" alt="Aventuras PR">
+                    </a>
+                    <div class="card-content">
+                        <a href="#">
+                            <h5 class="card-title">Aventuras PR</h5>
+                        </a>
+                        <p class="card-description">Developing a user friendly interface that integrates with functionality that enables 
+                            users to browse and discover local
+                            events, restaurants & lodging throughout Puerto Rico.</p>
+                        <a href="#" class="card-btn">
+                            Read more
+                            <svg class="svg-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M1 5h12m0 0L9 1m4 4L9 9" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <!-- Link for Aventuras PR Blog -->
+                    <a href="#">
+                        <img src="https://media.licdn.com/dms/image/D4E2DAQHTfUhhVMeATA/profile-treasury-image-shrink_800_800/0/1691267112759?e=1693213200&v=beta&t=UU38LLc63X4B6edcEwT854NQypJXi_48W-9Usl5MNBM"
+                            alt="Aventuras PR">
+                    </a>
+                    <div class="card-content">
+                        <a href="#">
+                            <h5 class="card-title">Aventuras PR</h5>
+                        </a>
+                        <p class="card-description">Developing a user friendly interface that integrates with functionality that enables
+                            users to browse and discover local
+                            events, restaurants & lodging throughout Puerto Rico.</p>
+                        <a href="#" class="card-btn">
+                            Read more
+                            <svg class="svg-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M1 5h12m0 0L9 1m4 4L9 9" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <!-- Link for Aventuras PR Blog -->
+                    <a href="#">
+                        <img src="https://media.licdn.com/dms/image/D4E2DAQHTfUhhVMeATA/profile-treasury-image-shrink_800_800/0/1691267112759?e=1693213200&v=beta&t=UU38LLc63X4B6edcEwT854NQypJXi_48W-9Usl5MNBM"
+                            alt="Aventuras PR">
+                    </a>
+                    <div class="card-content">
+                        <a href="#">
+                            <h5 class="card-title">Aventuras PR</h5>
+                        </a>
+                        <p class="card-description">Developing a user friendly interface that integrates with functionality that enables
+                            users to browse and discover local
+                            events, restaurants & lodging throughout Puerto Rico.</p>
+                        <a href="#" class="card-btn">
+                            Read more
+                            <svg class="svg-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M1 5h12m0 0L9 1m4 4L9 9" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <!-- Link for Aventuras PR Blog -->
+                    <a href="#">
+                        <img src="https://media.licdn.com/dms/image/D4E2DAQHTfUhhVMeATA/profile-treasury-image-shrink_800_800/0/1691267112759?e=1693213200&v=beta&t=UU38LLc63X4B6edcEwT854NQypJXi_48W-9Usl5MNBM"
+                            alt="Aventuras PR">
+                    </a>
+                    <div class="card-content">
+                        <a href="#">
+                            <h5 class="card-title">Aventuras PR</h5>
+                        </a>
+                        <p class="card-description">Developing a user friendly interface that integrates with functionality that enables
+                            users to browse and discover local
+                            events, restaurants & lodging throughout Puerto Rico.</p>
+                        <a href="#" class="card-btn">
+                            Read more
+                            <svg class="svg-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M1 5h12m0 0L9 1m4 4L9 9" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <button id="prevBtn" class="prevBtn"></button>
+            <button id="nextBtn" class="nextBtn"></button>
+        </div>
+    </section>
+    
+    <section class="article-section" id="blogs">
+        <div class="title-container">
+            <ion-icon class="title-icon" name="pencil"></ion-icon>
+            <h1 class="special-color title">BLOGS</h1>
+        </div>
+        <div class="article">
+            <a href="https://www.linkedin.com/pulse/journey-jr-full-stack-software-engineer-embracing-tech-lizbeth-garcia/">
+                <img width="100" height="50" src="https://media.licdn.com/dms/image/D5612AQEF-BnU0gwaIA/article-cover_image-shrink_423_752/0/1684422213490?e=1698278400&v=beta&t=wNcWewgMPk6syVSTpqlgDugBTUlGQHgSSlhhklgUwWs">
+                <span>Journey of a Jr. Full Stack Software Engineer: Embracing the Journey of Tech Exploration and Growth</span>
+            </a>
+        </div>
+        <div class="article">
+            <a
+                href="https://www.linkedin.com/pulse/navigating-software-engineering-careers-pathway-success-garcia/">
+                <img width="100" height="50" src="https://media.licdn.com/dms/image/D4E12AQFVaL5zIRzLdA/article-cover_image-shrink_423_752/0/1685533616384?e=1698278400&v=beta&t=s4IxVu0t7WqDaLeeMnfz72eznKJhTCurC9KymY23jrM">
+                <span>Navigating Software Engineering Careers: A Pathway to Success</span>
+            </a>
+        </div>
+        <div class="article">
+            <a href="https://medium.com/@LizzGarleb/understanding-object-oriented-programming-through-story-telling-18dfe36ccb0">
+            <img width="100" height="50" src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*o7BmMURj4KO8PMAHIFcdWw.jpeg">
+            <span>Understanding Object Oriented Programming through story telling</span>
+            </a>
+        </div>
+    </section>
+    <section id="contact">
+        <div class="title-container">
+            <ion-icon class="title-icon" name="call"></ion-icon>
+            <h1 class="special-color title">CONTACT</h1>
+        </div>
+    </section>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="matrix.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
