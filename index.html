@@ -14,35 +14,28 @@
 </head>
 <body>
     <header>
+        <div class="menu-toggle">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
         <div class="logo">
             <a href="#">
                 <h2>L. GarLeb</h2>
             </a>
-            <!-- <img src="logo.png" alt="Logo" width="80"> -->
         </div>
         <nav>
             <ul>
-                <li>
-                    <a href="#">HOME</a>
-                </li>
-                <li>
-                    <a href="#about">ABOUT</a>
-                </li>
-                <li>
-                    <a href="#journey">JOURNEY</a>
-                </li>
-                <li>
-                    <a href="#projects">PROJECTS</a>
-                </li>
-                <li>
-                    <a href="#blogs">BLOGS</a>
-                </li>
-                <li>
-                    <a href="#contact">CONTACT</a>
-                </li>
+                <li><a href="#">HOME</a></li>
+                <li><a href="#about">ABOUT</a></li>
+                <li><a href="#journey">JOURNEY</a></li>
+                <li><a href="#projects">PROJECTS</a></li>
+                <li><a href="#blogs">BLOGS</a></li>
+                <li><a href="#contact">CONTACT</a></li>
             </ul>
         </nav>
     </header>
+
 
     <!-- Side bar -->
     <div class="sidebar active" id="sidebar">
@@ -168,6 +161,8 @@
             </div>
         </div>
     </section>
+
+    <!-- Section Journey -->
     <section class="journey-section" id="journey">
         <div class="ag-timeline_title-box">
             <ion-icon class="footstep-icon" name="footsteps"></ion-icon>
@@ -197,7 +192,7 @@
                                             class="ag-timeline-card_img" width="620" height="330" />
                                     </div>
                                     <div class="ag-timeline-card_info">
-                                        <div class="ag-timeline-card_title">Holberton School - Specialization</div>
+                                        <div class="ag-timeline-card_title">Holberton School - ML | AI</div>
                                         <div class="ag-timeline-card_desc">
                                             The Holberton School Machine Learning Specialization is an 
                                             intensive program that provides students with a focused
@@ -400,27 +395,27 @@
         </div>
         <div class="article">
             <a href="https://www.linkedin.com/pulse/journey-jr-full-stack-software-engineer-embracing-tech-lizbeth-garcia/">
-                <img width="150" height="50" src="https://media.licdn.com/dms/image/D5612AQEF-BnU0gwaIA/article-cover_image-shrink_423_752/0/1684422213490?e=1698278400&v=beta&t=wNcWewgMPk6syVSTpqlgDugBTUlGQHgSSlhhklgUwWs">
+                <img src="https://media.licdn.com/dms/image/D5612AQEF-BnU0gwaIA/article-cover_image-shrink_423_752/0/1684422213490?e=1698278400&v=beta&t=wNcWewgMPk6syVSTpqlgDugBTUlGQHgSSlhhklgUwWs">
                 <span>Journey of a Jr. Full Stack Software Engineer: Embracing the Journey of Tech Exploration and Growth</span>
             </a>
         </div>
         <div class="article">
             <a
                 href="https://www.linkedin.com/pulse/navigating-software-engineering-careers-pathway-success-garcia/">
-                <img width="150" height="50" src="https://media.licdn.com/dms/image/D4E12AQFVaL5zIRzLdA/article-cover_image-shrink_423_752/0/1685533616384?e=1698278400&v=beta&t=s4IxVu0t7WqDaLeeMnfz72eznKJhTCurC9KymY23jrM">
+                <img src="https://media.licdn.com/dms/image/D4E12AQFVaL5zIRzLdA/article-cover_image-shrink_423_752/0/1685533616384?e=1698278400&v=beta&t=s4IxVu0t7WqDaLeeMnfz72eznKJhTCurC9KymY23jrM">
                 <span>Navigating Software Engineering Careers: A Pathway to Success</span>
             </a>
         </div>
         <div class="article">
             <a href="https://medium.com/@LizzGarleb/understanding-object-oriented-programming-through-story-telling-18dfe36ccb0">
-            <img width="150" height="50" src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*o7BmMURj4KO8PMAHIFcdWw.jpeg">
+            <img src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*o7BmMURj4KO8PMAHIFcdWw.jpeg">
             <span>Understanding Object Oriented Programming through story telling</span>
             </a>
         </div>
         <div class="article">
             <a href="https://medium.com/@LizzGarleb/mastering-regularization-techniques-safeguarding-machine-learning-models-against-overfitting-f4bccc039e38">
-            <img width="150" height="50" src="https://miro.medium.com/v2/resize:fit:1400/0*SOb-Owz7ZqBfEjwS">
-            <span>Mastering Regularization Techniques: Safeguarding Machine Learning Models Against Overfitting</span>
+            <img src="https://miro.medium.com/v2/resize:fit:1400/0*SOb-Owz7ZqBfEjwS">
+            <span>Mastering Regularization Techniques</span>
             </a>
         </div>
     </section>
@@ -450,8 +445,31 @@
         </div>
     </section>
 
+    <script>
+        let prevScrollPos = window.pageYOffset;
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navMenu = document.querySelector('nav ul');
 
+            window.addEventListener('scroll', function () {
+                const currentScrollPos = window.pageYOffset;
 
+                if (currentScrollPos > prevScrollPos) {
+                    // User is scrolling down
+                    menuToggle.style.display = 'none'; // Hide the menu toggle
+                    navMenu.classList.remove('active'); // Hide the navigation menu (if open)
+                } else {
+                    // User is scrolling up
+                    menuToggle.style.display = 'flex'; // Show the menu toggle
+                }
+
+                prevScrollPos = currentScrollPos;
+            });
+
+            menuToggle.addEventListener('click', function () {
+                navMenu.classList.toggle('active');
+            });
+
+    </script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="matrix.js"></script>
     <script src="index.js"></script>

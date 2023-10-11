@@ -162,7 +162,7 @@ prevBtn.addEventListener('click', () => {
 
 nextBtn.addEventListener('click', () => {
     const numCards = document.querySelectorAll('.card').length;
-    if (currentIndex < numCards - 3) {
+    if (currentIndex < numCards - 1) {
         currentIndex++;
         moveCarousel();
     }
