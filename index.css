@@ -900,8 +900,11 @@ img {
     border-bottom-right-radius: 30px;
     margin-top: 3vh;
     font-size: 18px;
+    width: 27.5rem;
+    height: 12.5rem;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .article a {
@@ -912,16 +915,18 @@ img {
 }
 
 .article span {
-    padding: 4px 0;
+    padding: 9px;
 }
 
 .article img {
     vertical-align: middle;
     border-bottom-left-radius: 0; /* Remove border radius on the bottom left for mobile */
     border-top-left-radius: 30px; /* Apply border radius on the top left for mobile */
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 0;
     margin-right: 0; /* Remove margin for mobile */
     max-width: 100%; /* Ensure the image fits within the container */
-    height: auto; /* Maintain aspect ratio */
+    height: 150px /* Maintain aspect ratio */
 }
 
 .article a:hover {
@@ -937,7 +942,9 @@ img {
 @media (max-width: 768px) {
     .article {
         flex-direction: column; /* Stack content in a column for mobile */
-        height: 17rem;
+        height: 15.5rem;
+        width: 17.5rem;
+        padding: 5px;
     }
 
     .article img {
