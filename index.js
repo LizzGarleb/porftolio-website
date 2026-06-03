@@ -3,18 +3,17 @@ var languagesIcons = document.querySelector(".languages-icons");
 var frameworksIcons = document.querySelector(".frameworks-icons");
 var databasesIcons  = document.querySelector(".database-icons");
 
+var salesforceIcons = document.querySelector(".salesforce-icons");
+
 var toggleIcons = function (e) {
     var id = e.target.id;
     languagesIcons.classList.add("hidden");
-    frameworksIcons.classList.add("hidden");
-    databasesIcons.classList.add("hidden");
+    if (salesforceIcons) salesforceIcons.classList.add("hidden");
 
     if (id === "toggle-languages") {
         languagesIcons.classList.remove("hidden");
-    } else if (id === "toggle-frameworks") {
-        frameworksIcons.classList.remove("hidden");
-    } else if (id === "toggle-databases") {
-        databasesIcons.classList.remove("hidden");
+    } else if (id === "toggle-salesforce") {
+        if (salesforceIcons) salesforceIcons.classList.remove("hidden");
     }
 };
 

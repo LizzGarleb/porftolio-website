@@ -341,13 +341,26 @@ canvas {
     font-size: 24px;
 }
 
-.tech-stack h4 {
-    display: inline;
-    margin-right: 20px;
-    margin-left: 10px;
-    padding-bottom: 5px;
-    cursor: pointer;
-    position: relative;
+.tech-stack h2 {
+    margin-bottom: 16px;
+}
+
+.stack-group {
+    margin-bottom: 14px;
+}
+
+.stack-category {
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 8px;
+}
+
+.stack-labels {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
 }
 
 .icons {
@@ -492,6 +505,46 @@ i {
     .drawer {
         display: flex;
     }
+}
+
+/* Salesforce labels */
+.sf-label {
+    display: inline-block;
+    background: var(--graphite);
+    border: 1px solid var(--red);
+    color: var(--off-white);
+    font-size: 12px;
+    padding: 4px 12px;
+    border-radius: 99px;
+    margin: 4px;
+}
+
+/* Certifications */
+.certifications {
+    margin-top: 20px;
+}
+
+.certifications h2 {
+    margin-bottom: 12px;
+}
+
+.cert-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 12px;
+    align-items: center;
+}
+
+.cert-img {
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
+    transition: transform 0.2s ease;
+}
+
+.cert-img:hover {
+    transform: scale(1.1);
 }
 
 /* Sidebar */
