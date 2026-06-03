@@ -633,8 +633,9 @@ img {
 
 .ag-timeline_line-progress {
     width: 100%;
-    height: 20%;
+    height: 0;
     background-color: var(--gold);
+    transition: height 0.1s linear;
 }
 
 .ag-timeline-card_box {
