@@ -7,6 +7,10 @@
     <title>Code by Red | Lizbeth García Lebrón — Software Engineer</title>
     <meta name="description" content="Software Engineer and tech educator from Puerto Rico. Building software, teaching tech, one post at a time.">
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
@@ -16,11 +20,6 @@
 
     <!-- Top Navbar — visible only at top of page -->
     <header id="top-navbar">
-        <div class="menu-toggle" id="menuToggle">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
-        </div>
         <div class="logo">
             <a href="#"><h2>Code by Red</h2></a>
         </div>
@@ -31,7 +30,21 @@
                 <li><a href="#journey">JOURNEY</a></li>
             </ul>
         </nav>
+        <div class="menu-toggle" id="menuToggle" aria-label="Open menu">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
     </header>
+
+    <!-- Mobile Drawer -->
+    <div class="drawer-overlay" id="drawerOverlay" onclick="closeDrawer()"></div>
+    <div class="drawer" id="drawer">
+        <div class="drawer-logo">Code by Red</div>
+        <a href="#" onclick="closeDrawer()">HOME</a>
+        <a href="#about" onclick="closeDrawer()">ABOUT</a>
+        <a href="#journey" onclick="closeDrawer()">JOURNEY</a>
+    </div>
 
     <!-- Side Navbar — visible only when scrolled past hero -->
     <div class="sidebar" id="sidebar">
@@ -50,8 +63,8 @@
     <section id="home">
         <canvas></canvas>
         <div class="textOverlap">
-            <div class="home">
-                <h1><strong>Welcome to my portfolio</strong></h1>
+            <h1 class="hero-title"><strong>Welcome to my portfolio</strong></h1>
+            <div class="hero-intro">
                 <p>Software Engineer · Educator · Builder</p>
                 <h2>Hi, I'm <span class="special-color">Lizbeth</span> García Lebrón<br>from Puerto Rico 🇵🇷</h2>
             </div>
@@ -147,10 +160,63 @@
 
                 <div class="ag-timeline_list">
 
+                    <!-- RK Rivera — Salesforce Administrator (Present) -->
                     <div class="js-timeline_item ag-timeline_item">
                         <div class="ag-timeline-card_box">
                             <div class="js-timeline-card_point-box ag-timeline-card_point-box">
-                                <div class="ag-timeline-card_point">JUN</div>
+                                <div class="ag-timeline-card_point">JAN</div>
+                            </div>
+                            <div class="ag-timeline-card_meta-box">
+                                <div class="ag-timeline-card_meta">2026</div>
+                            </div>
+                        </div>
+                        <div class="ag-timeline-card_item">
+                            <div class="ag-timeline-card_inner">
+                                <div class="ag-timeline-card_img-box">
+                                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=620&h=330&fit=crop" class="ag-timeline-card_img" width="620" height="330" alt="RK Rivera"/>
+                                </div>
+                                <div class="ag-timeline-card_info">
+                                    <div class="ag-timeline-card_title">RK Rivera — Salesforce Administrator</div>
+                                    <div class="ag-timeline-card_desc">
+                                        Lead end-to-end Salesforce implementations independently across Sales Cloud, Service Cloud, Marketing Cloud, Data Cloud, and OmniStudio. Serve as sole admin and developer on Marketing Cloud projects, translating business needs into scalable solutions. Earned Salesforce Certified Marketing Cloud Email Specialist.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ag-timeline-card_arrow"></div>
+                        </div>
+                    </div>
+
+                    <!-- RK Rivera — Junior Salesforce Administrator -->
+                    <div class="js-timeline_item ag-timeline_item">
+                        <div class="ag-timeline-card_box">
+                            <div class="ag-timeline-card_meta-box">
+                                <div class="ag-timeline-card_meta">2024</div>
+                            </div>
+                            <div class="js-timeline-card_point-box ag-timeline-card_point-box">
+                                <div class="ag-timeline-card_point">OCT</div>
+                            </div>
+                        </div>
+                        <div class="ag-timeline-card_item">
+                            <div class="ag-timeline-card_inner">
+                                <div class="ag-timeline-card_img-box">
+                                    <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=620&h=330&fit=crop" class="ag-timeline-card_img" width="620" height="330" alt="RK Rivera Junior"/>
+                                </div>
+                                <div class="ag-timeline-card_info">
+                                    <div class="ag-timeline-card_title">RK Rivera — Junior Salesforce Administrator</div>
+                                    <div class="ag-timeline-card_desc">
+                                        Supported Salesforce operations across 5 clouds. Built automations, workflows, and process solutions for a diverse client portfolio. Earned Salesforce Platform Administrator Certification, Salesforce Certified AI Associate, and Salesforce Certified Agentforce Specialist.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ag-timeline-card_arrow"></div>
+                        </div>
+                    </div>
+
+                    <!-- Raincoat — Trainee Developer -->
+                    <div class="js-timeline_item ag-timeline_item">
+                        <div class="ag-timeline-card_box">
+                            <div class="js-timeline-card_point-box ag-timeline-card_point-box">
+                                <div class="ag-timeline-card_point">NOV</div>
                             </div>
                             <div class="ag-timeline-card_meta-box">
                                 <div class="ag-timeline-card_meta">2023</div>
@@ -159,14 +225,12 @@
                         <div class="ag-timeline-card_item">
                             <div class="ag-timeline-card_inner">
                                 <div class="ag-timeline-card_img-box">
-                                    <img src="https://blog.holbertonschool.com/wp-content/uploads/2019/04/instagram_feed180.jpg"
-                                        class="ag-timeline-card_img" width="620" height="330" alt="Holberton School ML"/>
+                                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=620&h=330&fit=crop" class="ag-timeline-card_img" width="620" height="330" alt="Raincoat"/>
                                 </div>
                                 <div class="ag-timeline-card_info">
-                                    <div class="ag-timeline-card_title">Holberton School — ML | AI</div>
+                                    <div class="ag-timeline-card_title">Raincoat — Trainee Developer</div>
                                     <div class="ag-timeline-card_desc">
-                                        An intensive machine learning specialization covering ML algorithms,
-                                        deep learning, and data science techniques through hands-on projects.
+                                        Joined as the only junior developer on a team of 6 senior engineers. Built the magic link authentication feature in 2 days — it became the platform's primary login method. Led observability efforts using Zipkin, Prometheus, Grafana, and OpenTelemetry. Worked across the stack in JavaScript and TypeScript with React.js and Next.js.
                                     </div>
                                 </div>
                             </div>
@@ -174,26 +238,25 @@
                         </div>
                     </div>
 
+                    <!-- NUC University -->
                     <div class="js-timeline_item ag-timeline_item">
                         <div class="ag-timeline-card_box">
                             <div class="ag-timeline-card_meta-box">
                                 <div class="ag-timeline-card_meta">2023</div>
                             </div>
                             <div class="js-timeline-card_point-box ag-timeline-card_point-box">
-                                <div class="ag-timeline-card_point">JUN</div>
+                                <div class="ag-timeline-card_point">MAR</div>
                             </div>
                         </div>
                         <div class="ag-timeline-card_item">
                             <div class="ag-timeline-card_inner">
                                 <div class="ag-timeline-card_img-box">
-                                    <img src="laptop.jpg"
-                                        class="ag-timeline-card_img" width="620" height="330" alt="Dreamwalks"/>
+                                    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=620&h=330&fit=crop" class="ag-timeline-card_img" width="620" height="330" alt="NUC University"/>
                                 </div>
                                 <div class="ag-timeline-card_info">
-                                    <div class="ag-timeline-card_title">Dreamwalks</div>
+                                    <div class="ag-timeline-card_title">NUC University</div>
                                     <div class="ag-timeline-card_desc">
-                                        Discover the World through Walking — an ultimate guide to explore
-                                        the best walking trails and destinations around the world.
+                                        Bachelor's degree in Criminal Justice / Cyber Crime. Blending legal and technical knowledge to understand cybersecurity from both a law enforcement and engineering perspective.
                                     </div>
                                 </div>
                             </div>
@@ -201,54 +264,25 @@
                         </div>
                     </div>
 
+                    <!-- Holberton School — SWE Certification -->
                     <div class="js-timeline_item ag-timeline_item">
                         <div class="ag-timeline-card_box">
-                            <div class="js-timeline-card_point-box ag-timeline-card_point-box">
-                                <div class="ag-timeline-card_point">MAY</div>
-                            </div>
-                            <div class="ag-timeline-card_meta-box">
-                                <div class="ag-timeline-card_meta">2023</div>
-                            </div>
-                        </div>
-                        <div class="ag-timeline-card_item">
-                            <div class="ag-timeline-card_inner">
-                                <div class="ag-timeline-card_img-box">
-                                    <img src="https://media.licdn.com/dms/image/C560BAQFubMFZUMGB6w/company-logo_200_200/0/1632150984524?e=1700697600&v=beta&t=-0g-hwsN638BurX1WBGXf9ajxapHkOXKqNsxIEQaMKQ"
-                                        class="ag-timeline-card_img" width="620" height="330" alt="Abacrop"/>
-                                </div>
-                                <div class="ag-timeline-card_info">
-                                    <div class="ag-timeline-card_title">Abacrop</div>
-                                    <div class="ag-timeline-card_desc">
-                                        A digital agricultural data capture platform helping farmers
-                                        improve productivity and efficiency through accessible technology.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="ag-timeline-card_arrow"></div>
-                        </div>
-                    </div>
-
-                    <div class="js-timeline_item ag-timeline_item">
-                        <div class="ag-timeline-card_box">
-                            <div class="ag-timeline-card_meta-box">
-                                <div class="ag-timeline-card_meta">2022</div>
-                            </div>
                             <div class="js-timeline-card_point-box ag-timeline-card_point-box">
                                 <div class="ag-timeline-card_point">SEP</div>
                             </div>
+                            <div class="ag-timeline-card_meta-box">
+                                <div class="ag-timeline-card_meta">2022</div>
+                            </div>
                         </div>
                         <div class="ag-timeline-card_item">
                             <div class="ag-timeline-card_inner">
                                 <div class="ag-timeline-card_img-box">
-                                    <img src="https://blog.holbertonschool.com/wp-content/uploads/2019/04/instagram_feed180.jpg"
-                                        class="ag-timeline-card_img" width="620" height="330" alt="Holberton School SWE"/>
+                                    <img src="https://blog.holbertonschool.com/wp-content/uploads/2019/04/instagram_feed180.jpg" class="ag-timeline-card_img" width="620" height="330" alt="Holberton School SWE"/>
                                 </div>
                                 <div class="ag-timeline-card_info">
-                                    <div class="ag-timeline-card_title">Holberton School — SWE</div>
+                                    <div class="ag-timeline-card_title">Holberton School — Software Engineering</div>
                                     <div class="ag-timeline-card_desc">
-                                        An immersive foundation course in software engineering covering
-                                        full-stack development, algorithms, and system engineering through
-                                        hands-on, project-based learning.
+                                        Completed an immersive software engineering certification covering full-stack development, algorithms, and system engineering through hands-on, project-based learning.
                                     </div>
                                 </div>
                             </div>
@@ -282,32 +316,45 @@
     </footer>
 
     <script>
-        const topNavbar = document.getElementById('top-navbar');
-        const sidebar   = document.getElementById('sidebar');
-        const menuToggle = document.getElementById('menuToggle');
-        const navMenu   = document.getElementById('navMenu');
+        const topNavbar   = document.getElementById('top-navbar');
+        const sidebar     = document.getElementById('sidebar');
+        const menuToggle  = document.getElementById('menuToggle');
+        const drawer      = document.getElementById('drawer');
+        const drawerOverlay = document.getElementById('drawerOverlay');
         const heroSection = document.getElementById('home');
 
+        function openDrawer() {
+            drawer.classList.add('drawer-open');
+            drawerOverlay.classList.add('drawer-overlay-show');
+            menuToggle.classList.add('is-open');
+        }
+
+        function closeDrawer() {
+            drawer.classList.remove('drawer-open');
+            drawerOverlay.classList.remove('drawer-overlay-show');
+            menuToggle.classList.remove('is-open');
+        }
+
+        menuToggle.addEventListener('click', function () {
+            drawer.classList.contains('drawer-open') ? closeDrawer() : openDrawer();
+        });
+
         function handleScroll() {
-            const scrollY     = window.pageYOffset;
-            const heroHeight  = heroSection.offsetHeight;
-            const threshold   = heroHeight * 0.3;
+            const scrollY    = window.pageYOffset;
+            const heroHeight = heroSection.offsetHeight;
+            const threshold  = heroHeight * 0.3;
 
             if (scrollY > threshold) {
                 topNavbar.classList.add('nav-hidden');
                 sidebar.classList.add('sidebar-visible');
+                closeDrawer();
             } else {
                 topNavbar.classList.remove('nav-hidden');
                 sidebar.classList.remove('sidebar-visible');
-                navMenu.classList.remove('active');
             }
         }
 
         window.addEventListener('scroll', handleScroll);
-
-        menuToggle.addEventListener('click', function () {
-            navMenu.classList.toggle('active');
-        });
     </script>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

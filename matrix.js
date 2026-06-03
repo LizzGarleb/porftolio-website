@@ -22,12 +22,12 @@ for (var i = 0; i < columns; i++) {
 }
 
 var fontSize = 14;
-ctx.font = fontSize + "px Arial";
+ctx.font = fontSize + "px 'Share Tech Mono', monospace";
 
 
 // Setting up the draw function
 function draw() {
-    ctx.fillStyle = 'rgba(0, 0, 0, .1)';
+    ctx.fillStyle = 'rgba(30, 30, 30, .15)';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     for (var i = 0; i < drops.length; i++) {
         var text = letters[Math.floor(Math.random() * letters.length)];
