@@ -102,32 +102,144 @@
             94% { transform: translate(-2px, 0); }
         }
 
-        /* Strikethrough glitch for option C */
-        .glitch-strike {
+        /* Diagonal slash for option C */
+        .slash-wrapper {
+            position: relative;
+            display: inline-block;
             font-family: 'Orbitron', sans-serif;
             font-size: clamp(72px, 15vw, 120px);
             font-weight: 700;
-            color: #C41E3A;
-            position: relative;
-            display: inline-block;
             line-height: 1;
             margin-bottom: 20px;
-            text-decoration: line-through;
-            text-decoration-color: #C9A84C;
-            text-decoration-thickness: 4px;
-            animation: glitch 3s infinite;
         }
 
-        /* Minimal style for option D */
-        .glitch-cold {
+        .slash-top {
+            color: #C41E3A;
+            clip-path: polygon(0 0, 100% 0, 100% 35%, 0% 58%);
+            display: block;
+        }
+
+        .slash-bottom {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%;
+            color: #C41E3A;
+            clip-path: polygon(0 72%, 100% 48%, 100% 100%, 0 100%);
+            transform: translate(-7px, 6px);
+            display: block;
+        }
+
+        /* VHS retro glitch for option D */
+        .vhs-wrapper {
+            position: relative;
+            display: inline-block;
             font-family: 'Orbitron', sans-serif;
             font-size: clamp(80px, 18vw, 140px);
             font-weight: 700;
-            color: #F5F0E8;
-            display: inline-block;
             line-height: 1;
-            margin-bottom: 20px;
-            letter-spacing: -4px;
+            margin-bottom: 28px;
+            letter-spacing: -2px;
+        }
+
+        .vhs-base {
+            color: #888888;
+            display: block;
+            position: relative;
+        }
+
+        .vhs-red {
+            color: #C41E3A;
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%;
+            opacity: 0;
+            transform: translateX(0);
+        }
+
+        .vhs-gold {
+            color: #C9A84C;
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%;
+            opacity: 0;
+            transform: translateX(0);
+        }
+
+        .vhs-scanline {
+            position: absolute;
+            left: -5%;
+            width: 110%;
+            height: 6px;
+            top: 110%;
+            opacity: 0;
+            background: linear-gradient(to bottom,
+                transparent 0%,
+                rgba(201, 168, 76, 0.3) 40%,
+                rgba(255,255,255,0.15) 50%,
+                rgba(196, 30, 58, 0.3) 60%,
+                transparent 100%);
+            pointer-events: none;
+        }
+
+        .vhs-wrapper.glitching .vhs-scanline {
+            opacity: 1;
+        }
+
+        .vhs-noise {
+            position: absolute;
+            top: 0; left: -5%;
+            width: 110%; height: 100%;
+            pointer-events: none;
+        }
+
+        /* Active glitch state — triggered by JS */
+        .vhs-wrapper.glitching .vhs-red {
+            opacity: 0.85;
+            animation: vhs-red 0.12s steps(1) infinite;
+        }
+
+        .vhs-wrapper.glitching .vhs-gold {
+            opacity: 0.75;
+            animation: vhs-gold 0.12s steps(1) infinite;
+        }
+
+        .vhs-wrapper.glitching .vhs-scanline {
+            animation: scan-up 1.8s linear forwards;
+        }
+
+        .vhs-wrapper.glitching .vhs-noise {
+            animation: vhs-clip 0.2s steps(1) infinite;
+        }
+
+        @keyframes vhs-red {
+            0%   { transform: translateX(-6px) skewX(-1deg); clip-path: polygon(0 15%, 100% 15%, 100% 40%, 0 40%); }
+            20%  { transform: translateX(-3px) skewX(0deg);  clip-path: polygon(0 0,   100% 0,   100% 100%, 0 100%); }
+            40%  { transform: translateX(-8px) skewX(1deg);  clip-path: polygon(0 55%, 100% 55%, 100% 80%, 0 80%); }
+            60%  { transform: translateX(-4px);               clip-path: polygon(0 0,   100% 0,   100% 100%, 0 100%); }
+            80%  { transform: translateX(-7px) skewX(-1deg); clip-path: polygon(0 30%, 100% 30%, 100% 60%, 0 60%); }
+            100% { transform: translateX(-5px);               clip-path: polygon(0 0,   100% 0,   100% 100%, 0 100%); }
+        }
+
+        @keyframes vhs-gold {
+            0%   { transform: translateX(6px) skewX(1deg);   clip-path: polygon(0 60%, 100% 60%, 100% 85%, 0 85%); }
+            20%  { transform: translateX(3px) skewX(0deg);   clip-path: polygon(0 0,   100% 0,   100% 100%, 0 100%); }
+            40%  { transform: translateX(8px) skewX(-1deg);  clip-path: polygon(0 10%, 100% 10%, 100% 45%, 0 45%); }
+            60%  { transform: translateX(4px);                clip-path: polygon(0 0,   100% 0,   100% 100%, 0 100%); }
+            80%  { transform: translateX(7px) skewX(1deg);   clip-path: polygon(0 70%, 100% 70%, 100% 95%, 0 95%); }
+            100% { transform: translateX(5px);                clip-path: polygon(0 0,   100% 0,   100% 100%, 0 100%); }
+        }
+
+        @keyframes scan-up {
+            0%   { top: 110%; }
+            100% { top: -20%; }
+        }
+
+        @keyframes vhs-clip {
+            0%   { clip-path: polygon(0 20%, 100% 20%, 100% 22%, 0 22%); background: rgba(136,136,136,0.08); }
+            25%  { clip-path: polygon(0 55%, 100% 55%, 100% 57%, 0 57%); background: rgba(196,30,58,0.06); }
+            50%  { clip-path: polygon(0 75%, 100% 75%, 100% 77%, 0 77%); background: rgba(201,168,76,0.06); }
+            75%  { clip-path: polygon(0 40%, 100% 40%, 100% 42%, 0 42%); background: rgba(136,136,136,0.08); }
+            100% { clip-path: polygon(0 10%, 100% 10%, 100% 12%, 0 12%); background: rgba(196,30,58,0.05); }
         }
 
         .gold-line {
@@ -209,7 +321,7 @@
         const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
         const fontSize = 14;
         const columns = Math.floor(canvas.width / fontSize);
-        const drops = Array(columns).fill(1);
+        const drops = Array.from({length: columns}, () => Math.floor(Math.random() * (canvas.height / fontSize)));
 
         function drawMatrix(color) {
             ctx.fillStyle = 'rgba(30, 30, 30, 0.15)';
@@ -226,70 +338,82 @@
 
         // 4 variations
         const variations = [
-            // Option A — Terminal Error
-            {
-                color: '#C41E3A',
-                html: `
-                    <div class="system-label">[ ERROR 404 ]</div>
-                    <div class="glitch" style="animation: glitch 3s infinite;">404</div>
-                    <div class="gold-line"></div>
-                    <div class="error-title">ACCESS DENIED</div>
-                    <div class="error-sub">
-                        Nothing to see here.<br>
-                        <span class="highlight">Access denied.</span> Page not found.
-                    </div>
-                    <a href="index.html" class="btn">&gt; Return to base_</a>
-                `
-            },
-            // Option B — Hacker Flavour
-            {
-                color: '#C41E3A',
-                html: `
-                    <div class="system-label">[ SYSTEM ERROR ]</div>
-                    <div class="glitch" style="animation: glitch 3s infinite;">404</div>
-                    <div class="gold-line"></div>
-                    <div class="error-title">FILE NOT FOUND</div>
-                    <div class="error-sub">
-                        You've wandered into the void.<br>
-                        Even <span class="highlight">big sister</span> can't find this page.
-                    </div>
-                    <a href="index.html" class="btn">&gt; Go back home_</a>
-                `
-            },
-            // Option C — Glitched Identity
-            {
-                color: '#C9A84C',
-                html: `
-                    <div class="system-label">[ IDENTITY ERROR ]</div>
-                    <div class="glitch-strike">404</div>
-                    <div class="gold-line"></div>
-                    <div class="error-title">PAGE WIPED</div>
-                    <div class="error-sub">
-                        This page has been wiped.<br>
-                        <span class="gold">Nice try. — Red</span>
-                    </div>
-                    <a href="index.html" class="btn">&gt; Return home_</a>
-                `
-            },
-            // Option D — Minimal and Cold
-            {
-                color: '#888',
-                html: `
-                    <div class="system-label">[ 404 ]</div>
-                    <div class="glitch-cold">404</div>
-                    <div class="gold-line"></div>
-                    <div class="error-sub">
-                        You weren't supposed to be here.
-                    </div>
-                    <a href="index.html" class="btn">&gt; Escape_</a>
-                `
-            }
-        ];
+    // Option B — Hacker Flavour
+    {
+        color: '#C41E3A',
+        opacity: .50,
+        html: `
+            <div class="system-label">[ SYSTEM ERROR ]</div>
+            <div class="glitch" style="animation: glitch 2s infinite;">404</div>
+            <div class="gold-line"></div>
+            <div class="error-title">FILE NOT FOUND</div>
+            <div class="error-sub" style="opacity: 0.85;">
+                You've wandered into the void.<br>
+                Even <span class="highlight">big sister</span> can't find this page.
+            </div>
+            <a href="index.html" class="btn">&gt; Go back home_</a>
+        `
+    },
+    // Option C — Glitched Identity
+    {
+        color: '#C41E3A',
+        ocapity: .50,
+        html: `
+            <div class="system-label">[ IDENTITY ERROR ]</div>
+            <div class="slash-wrapper"><span class="slash-top">404</span><span class="slash-bottom">404</span></div>
+            <div class="gold-line"></div>
+            <div class="error-title">PAGE WIPED</div>
+            <div class="error-sub">
+                This page has been wiped.<br>
+                <span class="gold">Nice try. — <span style="color:#C41E3A;">Red</span></span>
+            </div>
+            <a href="index.html" class="btn">&gt; Return home_</a>
+        `
+    },
+
+    // Option D — Minimal and Cold
+    {
+        color: '#C9A84C',
+        ocapity: .50,
+        html: `
+            <div class="system-label">[ 404 ]</div>
+            <div class="vhs-wrapper"><span class="vhs-base">404</span><span class="vhs-red">404</span><span class="vhs-gold">404</span><div class="vhs-scanline"></div><div class="vhs-noise"></div></div>
+            <div class="gold-line"></div>
+            <div class="error-sub">
+                You weren't supposed to be here.
+            </div>
+            <a href="index.html" class="btn">&gt; Escape_</a>
+        `
+    }
+];
 
         // Pick random variation on load
         const pick = variations[Math.floor(Math.random() * variations.length)];
         document.getElementById('content').innerHTML = pick.html;
+        if (pick.opacity) canvas.style.opacity = pick.opacity;
         setInterval(() => drawMatrix(pick.color), 33);
+
+        // VHS glitch controller for Option D
+        function runVhsGlitch() {
+            const wrapper = document.querySelector('.vhs-wrapper');
+            if (!wrapper) return;
+            // Trigger glitch
+            wrapper.classList.add('glitching');
+            // Stop after scan line finishes (1.8s)
+            setTimeout(() => {
+                wrapper.classList.remove('glitching');
+                // Reset scanline position
+                const scanline = wrapper.querySelector('.vhs-scanline');
+                if (scanline) scanline.style.top = '110%';
+                // Wait 3 seconds then repeat
+                setTimeout(runVhsGlitch, 3000);
+            }, 1800);
+        }
+
+        // Start first glitch after 3 second delay
+        if (document.querySelector('.vhs-wrapper')) {
+            setTimeout(runVhsGlitch, 3000);
+        }
     </script>
 
 </body>
