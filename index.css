@@ -507,6 +507,31 @@ i {
     }
 }
 
+/* Resume button */
+.resume-btn-wrap {
+    margin: 20px 0;
+}
+
+.resume-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 24px;
+    background: transparent;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    border-radius: 99px;
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 1px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.resume-btn:hover {
+    background: var(--gold);
+    color: var(--black);
+}
+
 /* Salesforce labels */
 .sf-label {
     display: inline-block;

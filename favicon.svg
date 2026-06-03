@@ -1,0 +1,5 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <rect width="64" height="64" rx="12" fill="#0a0a0a"/>
+  <path d="M32,7 L48,28 C48,28 52,33 52,37 C52,43 47,46 41,44 C44,47 45,50 43,52 L21,52 C19,50 20,47 23,44 C17,46 12,43 12,37 C12,33 16,28 16,28 Z" fill="#C41E3A"/>
+  <text x="32" y="42" text-anchor="middle" font-family="Georgia, serif" font-size="28" font-weight="700" fill="#F5F0E8">R</text>
+</svg>
