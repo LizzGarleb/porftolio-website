@@ -693,7 +693,7 @@ img {
 .ag-timeline-card_item {
     display: inline-block;
     width: 35%;
-    margin: -77px 100px 0 100px;
+    margin: 0 100px 0 100px;
     background-color: var(--graphite);
     border: 1px solid var(--gold);
     opacity: 0;
@@ -730,10 +730,6 @@ img {
     margin-left: -10px;
     right: auto;
     left: 0;
-}
-
-.ag-timeline-card_img {
-    width: 100%;
 }
 
 .ag-timeline-card_info {
@@ -805,11 +801,6 @@ img {
     .ag-format-container {
         width: 100%;
         padding: 0 12px;
-    }
-
-    .ag-timeline-card_img {
-        height: auto;
-        width: 100%;
     }
 
     .ag-timeline-card_item {
