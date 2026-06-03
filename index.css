@@ -499,7 +499,7 @@ i {
     display: none;
     flex-direction: column;
     align-items: center;
-    background-color: var(--dark-red);
+    background-color: var(--red);
     border-radius: 30px;
     overflow: hidden;
     padding: 8px 0;
@@ -786,7 +786,7 @@ img {
     }
 
     .ag-timeline-card_item {
-        width: calc(100% - 80px);
+        width: calc(100% - 130px);
         margin: 10px 0 0 70px;
     }
 
