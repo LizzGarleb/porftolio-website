@@ -105,3 +105,58 @@ for (var i = 0; i < h4s.length; i++) {
         fnOnScroll();
     });
 })(jQuery);
+
+// ── Custom Cursor ──────────────────────────────────────────
+(function () {
+    // Only run on non-touch devices
+    if (!window.matchMedia('(hover: hover)').matches) return;
+
+    var dot  = document.createElement('div');
+    dot.className = 'cursor-dot';
+    document.body.appendChild(dot);
+
+    var ring = document.createElement('div');
+    ring.className = 'cursor-ring';
+    document.body.appendChild(ring);
+
+    var mouseX = 0, mouseY = 0;
+    var ringX  = 0, ringY  = 0;
+
+    document.addEventListener('mousemove', function (e) {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        // Dot snaps instantly to cursor
+        dot.style.transform = 'translate(' + (mouseX - 4) + 'px, ' + (mouseY - 4) + 'px)';
+    });
+
+    // Ring lags slightly behind using lerp
+    (function animateRing() {
+        ringX += (mouseX - ringX) * 0.12;
+        ringY += (mouseY - ringY) * 0.12;
+        ring.style.transform = 'translate(' + (ringX - 16) + 'px, ' + (ringY - 16) + 'px)';
+        requestAnimationFrame(animateRing);
+    })();
+
+    // Hover state on interactive elements
+    var interactiveSelector = 'a, button, [role="button"], .card-btn, .resume-btn, .prevBtn, .nextBtn, .menu-toggle, .cert-img, .social-group, .bar';
+    document.querySelectorAll(interactiveSelector).forEach(function (el) {
+        el.addEventListener('mouseenter', function () {
+            dot.classList.add('hovering');
+            ring.classList.add('hovering');
+        });
+        el.addEventListener('mouseleave', function () {
+            dot.classList.remove('hovering');
+            ring.classList.remove('hovering');
+        });
+    });
+
+    // Click pulse
+    document.addEventListener('mousedown', function () {
+        dot.classList.add('clicking');
+        ring.classList.add('clicking');
+    });
+    document.addEventListener('mouseup', function () {
+        dot.classList.remove('clicking');
+        ring.classList.remove('clicking');
+    });
+})();
