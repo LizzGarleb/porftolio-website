@@ -739,14 +739,17 @@ img {
 }
 
 .ag-timeline-card_point {
-    height: 50px;
-    line-height: 50px;
-    width: 50px;
+    height: 54px;
+    width: 54px;
     border: 3px solid var(--gold);
     background-color: var(--red);
-    text-align: center;
-    font-family: 'ESL Legend', sans-serif;
-    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
     color: var(--off-white);
     border-radius: 50%;
 }

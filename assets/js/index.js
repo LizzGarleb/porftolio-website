@@ -68,7 +68,7 @@ for (var i = 0; i < h4s.length; i++) {
 
             agTimelineLine.css({
                 top:    agTimelineItem.first().find(agTimelinePoint).offset().top - agTimelineItem.first().offset().top,
-                bottom: agTimeline.offset().top + agTimeline.outerHeight() - agTimelineItem.last().find(agTimelinePoint).offset().top
+                bottom: 0
             });
 
             if (f !== agPosY) {
@@ -78,17 +78,17 @@ for (var i = 0; i < h4s.length; i++) {
         }
 
         function fnUpdateProgress() {
-            var agTop = agTimelineItem.last().find(agTimelinePoint).offset().top;
-            var i = agTop + agPosY - $(window).scrollTop();
+            var agBottom = agTimeline.offset().top + agTimeline.outerHeight();
+            var i = agBottom + agPosY - $(window).scrollTop();
             var a = agTimelineLineProgress.offset().top + agPosY - $(window).scrollTop();
-            var n = agPosY - a + agOuterHeight / 2;
+            var n = agPosY - a + agOuterHeight * 0.95;
 
-            if (i <= agPosY + agOuterHeight / 2) { n = i - a; }
+            if (i <= agPosY + agOuterHeight * 0.95) { n = i - a; }
             agTimelineLineProgress.css({ height: n + "px" });
 
             agTimelineItem.each(function () {
                 var itemTop = $(this).find(agTimelinePoint).offset().top;
-                if ((itemTop + agPosY - $(window).scrollTop()) < agPosY + 0.5 * agOuterHeight) {
+                if ((itemTop + agPosY - $(window).scrollTop()) < agPosY + 0.95 * agOuterHeight) {
                     $(this).addClass('js-ag-active');
                 } else {
                     $(this).removeClass('js-ag-active');
