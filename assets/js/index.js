@@ -125,15 +125,17 @@ for (var i = 0; i < h4s.length; i++) {
     document.addEventListener('mousemove', function (e) {
         mouseX = e.clientX;
         mouseY = e.clientY;
-        // Dot snaps instantly to cursor
-        dot.style.transform = 'translate(' + (mouseX - 4) + 'px, ' + (mouseY - 4) + 'px)';
+        // Dot snaps instantly — CSS handles centering via translate(-50%, -50%)
+        dot.style.left = mouseX + 'px';
+        dot.style.top  = mouseY + 'px';
     });
 
     // Ring lags slightly behind using lerp
     (function animateRing() {
         ringX += (mouseX - ringX) * 0.12;
         ringY += (mouseY - ringY) * 0.12;
-        ring.style.transform = 'translate(' + (ringX - 16) + 'px, ' + (ringY - 16) + 'px)';
+        ring.style.left = ringX + 'px';
+        ring.style.top  = ringY + 'px';
         requestAnimationFrame(animateRing);
     })();
 
